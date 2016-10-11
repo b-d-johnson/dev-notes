@@ -1,6 +1,7 @@
 var React = require('react');
 var Router = require('react-router');
 var Repos = require('./Github/Repos');
+var Orgs = require('./Github/Orgs');
 var UserProfile = require('./Github/UserProfile');
 var Notes = require('./Notes/Notes');
 var ReactFireMixin = require('reactfire');
@@ -13,11 +14,12 @@ var Profile = React.createClass({
     return {
       notes: [1,2,3],
       bio: {},
-      repos: []
+      repos: [],
+      orgs: []
     }
   },
   componentDidMount: function(){
-    this.ref = new Firebase('https://github-note-taker.firebaseio.com/');
+    this.ref = new Firebase('https://dev-notes-b4e55.firebaseio.com/');
     var childRef = this.ref.child(this.props.params.username);
     this.bindAsArray(childRef, 'notes');
 
@@ -25,7 +27,8 @@ var Profile = React.createClass({
       .then(function(data){
         this.setState({
           bio: data.bio,
-          repos: data.repos
+          repos: data.repos,
+          orgs: data.orgs
         })
       }.bind(this))
   },
@@ -43,6 +46,7 @@ var Profile = React.createClass({
         </div>
         <div className="col-md-4">
           <Repos username={this.props.params.username} repos={this.state.repos}/>
+          <Orgs username={this.props.params.username} orgs={this.state.orgs}/>
         </div>
         <div className="col-md-4">
           <Notes
