@@ -6,10 +6,12 @@ This is a toy project built in React for devs to take notes on GitHub profiles.
 React
 - State
 - Props
-- Components
+- Components and the Component Lifecycle
 - JSX
 - propTypes
 - Events
+
+ES6
 
 Webpack
 
@@ -25,4 +27,4 @@ Network Requests (via Axios)
 2. `npm install`
 3. `webpack -w`
 
-You can then open `index.html` and view the project in your browser.
+You can then open `public/index.html` and view the project in your browser.
