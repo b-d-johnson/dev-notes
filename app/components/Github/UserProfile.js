@@ -28,4 +28,4 @@ UserProfile.propTypes = {
   bio: React.PropTypes.object.isRequired
 }
 
-export default UserProfile
+export default UserProfile;
