@@ -1,8 +1,8 @@
-var React = require('react');
-var SearchGithub = require('./SearchGithub');
+import React from 'react';
+import SearchGithub from './SearchGithub';
 
-var Main = React.createClass({
-  render: function(){
+class Main extends React.Component {
+  render(){
     return (
       <div className="main-container">
         <nav className="navbar navbar-default" role="navigation">
@@ -16,15 +16,15 @@ var Main = React.createClass({
             <h4>Graphs</h4>
           </div>
           <div className="col-sm-4" style={{marginTop: 15}}>
-            <SearchGithub />
+            <SearchGithub history={this.props.history}/>
           </div>
         </nav>
         <div className="container">
           {this.props.children}
-        </div>
+          </div>
       </div>
     )
   }
-});
+}
 
-module.exports = Main;
+export default Main;
