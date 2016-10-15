@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Orgs extends React.Component {
+class Orgs = ({orgs}) => {
   render(){
     var orgs = this.props.orgs.map(function(orgs, index){
       return (

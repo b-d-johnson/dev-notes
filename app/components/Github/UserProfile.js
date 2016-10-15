@@ -1,6 +1,6 @@
 import React from 'react';
 
-class UserProfile extends React.Component {
+class UserProfile = ({bio}) => {
   render(){
     return (
       <div>
