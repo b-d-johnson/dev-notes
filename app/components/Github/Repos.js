@@ -8,8 +8,8 @@ const Repos = ({repos}) => {
         {repos.map((repo, index) => {
           return (
             <li className="list-group-item" key={repo.name}>
-              <h4><a href={repo.html_url}>{repo.name}</a></h4>
-              <p>{repo.description}</p>
+              {repo.html_url && <h4><a href={repo.html_url}>{repo.name}</a></h4>}
+              {repo.description && <p>{repo.description}</p> }
               {repo.languages_url && <p><a href={repo.languages_url}>{repo.language}</a></p>}
             </li>
           )
@@ -21,7 +21,7 @@ const Repos = ({repos}) => {
 
 Repos.propTypes = {
   username: React.PropTypes.string.isRequired,
-  repos: React.PropTypes.array.isRequired
+  // repos: React.PropTypes.array.isRequired
 }
 
 export default Repos;
